@@ -11,11 +11,11 @@ import org.apache.commons.compress.compressors.CompressorException;
 import org.apache.commons.compress.compressors.CompressorStreamFactory;
 import org.example.service.CustomFileReader;
 
-public class CustomFileReaderImpl implements CustomFileReader {
+public class CustomFileReaderBz2 implements CustomFileReader {
     private static final String CANT_READ_FILE = "Can't read file: ";
 
     @Override
-    public List<Integer> readNumbersFromBz2(String fileName) {
+    public List<Integer> readNumbers(String fileName) {
         List<Integer> filesLines = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
                 new CompressorStreamFactory().createCompressorInputStream(

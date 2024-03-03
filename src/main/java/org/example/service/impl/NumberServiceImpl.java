@@ -1,9 +1,8 @@
 package org.example.service.impl;
 
-import org.example.service.NumberService;
-
 import java.util.ArrayList;
 import java.util.List;
+import org.example.service.NumberService;
 
 public class NumberServiceImpl implements NumberService {
     @Override
@@ -11,7 +10,7 @@ public class NumberServiceImpl implements NumberService {
         return integers.stream()
                 .mapToInt(n -> n)
                 .max()
-                .getAsInt();
+                .orElseThrow();
     }
 
     @Override
@@ -19,7 +18,7 @@ public class NumberServiceImpl implements NumberService {
         return integers.stream()
                 .mapToInt(n -> n)
                 .min()
-                .getAsInt();
+                .orElseThrow();
     }
 
     @Override
@@ -38,7 +37,7 @@ public class NumberServiceImpl implements NumberService {
         return integers.stream()
                 .mapToInt(n -> n)
                 .average()
-                .getAsDouble();
+                .orElseThrow();
     }
 
     @Override
